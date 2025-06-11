@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>OOZY MAIN PAGE</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!--최상단 토픽-->
+        <header class="top_topic"><span class="top_topic_text">BRAND OOZY</span></header>
+
+        <!--페이지메뉴/네비게이션 바-->
+        <nav class="page_menu">
+            <div class="page_content">
+                <!--Using active, first page-->
+                <button class="menu_btn active" onclick="changeIframe('index.html')">About Us</button>
+                <div class="menus">Menu
+                <!--When hover active, showup category-->
+                    <div class="category"> 
+                        <button class="category_menu" onclick="changeIframe('menu.html#coffee')">COFFEE</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#coldbrew')">COLDBREW</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#beverage')">BEVERAGE</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#frappe')">FRAPPE</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#ade')">ADE&MOJITO</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#tea')">TEA&JUICE</button>
+                        <button class="category_menu" onclick="changeIframe('menu.html#dessert')">DESSERT</button>
+                    </div>
+                </div>
+                <button class="menu_btn" onclick="changeIframe('store.html')">Store</button>
+            </div>
+        </nav>
+
+        <!--main contents division-->
+        <main class="main_page">
+            <iframe id="main_frame" src="index.html"></iframe> <!--네비게이션 바 아래, iframe으로 내부 페이지 변경!-->
+        </main>
+
+        <script> //자바스크립트 함수 구현
+      function changeIframe(pageUrl) { //함수명(변수)
+        const iframe = document.getElementById("main_frame");
+        iframe.src = pageUrl;
+      }
+        </script>
+    </body>
+</html>

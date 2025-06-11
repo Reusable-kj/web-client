@@ -1,0 +1,145 @@
+* { /*모든 요소의 패딩, 마진을 제거(스타일관리에 용이하도록)*/
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body { 
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    background-color: white;
+}
+
+main {
+    position: fixed;
+    width: 100vw;
+    left:0;
+    top: 105px;
+    bottom: 0;
+    border:none;
+}
+
+main iframe {
+    background-color: beige;
+    width: 100%;
+    height: 100%;
+    border:none;
+    bottom: 0;
+}
+
+.top_topic {
+    background: linear-gradient(to left, rgb(11, 62, 11), rgb(1, 132, 1));
+    width:100vw;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;   
+}
+
+.top_topic_text {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page_menu {
+    background-color: white;
+    position: sticky;
+    top: 50px;
+    z-index: 10;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    gap: 40px;
+}
+
+.menu_btn {
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.menu_btn:hover {
+    transform: scale(1.02);
+    font-weight: bold;
+}
+
+.menu_btn.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.menus {
+    position: relative;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+.menus:hover {
+    font-weight: bold;
+}
+
+.category {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    transform: translateX(-50%); /*부모속성의 중앙에서 category의 좌상단 꼭짓점부터 내려오기때문에, 좌로 50% 밀어줌*/
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.621);
+    gap: 5px;
+    padding: 12px 0;
+    z-index: 100;
+    visibility: hidden;
+    display:flex;
+    justify-content: center;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.3 ease;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menus:hover .category {
+    opacity: 1;
+    visibility: visible;
+}
+
+.category_menu {
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: #92400e;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.category_menu:hover {
+    font-weight: bold;
+}
+
+.category_menu .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
